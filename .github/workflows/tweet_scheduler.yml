@@ -2,7 +2,7 @@ name: Tweet Schedule
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # The workflow runs every 3 min.
+    - cron: '0 1-23/2 * * *' # The workflow runs every odd hours.
 
 jobs:
   tweet:
