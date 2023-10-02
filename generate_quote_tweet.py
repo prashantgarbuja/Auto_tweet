@@ -15,7 +15,7 @@ def get_random_quote():
     return f'"{data["content"]}" - {data["author"]}'
 
 #Insert tweet in payload.
-payload = {"text": "Auto-generated: "+get_random_quote()}
+payload = {"text": get_random_quote()}
 print("Payload: %s" % payload)
 
 # Make the request
