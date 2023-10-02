@@ -7,7 +7,8 @@ Tech Stack used:
 - Github Action
 
 ### Purpose: 
-Create a schedule job to generate a random quote and tweet them via Twitter.
+Create a scheduled job to generate a random quote and tweet it via Twitter.
+Visit my [Twitter](https://twitter.com/garbuja_p) for the result. (Note: all tweets are auto-generated via API.)
 
 ### Instruction:
  - Create a Twitter [developer](https://developer.twitter.com/) account (if you don't already have).
@@ -15,7 +16,7 @@ Create a schedule job to generate a random quote and tweet them via Twitter.
  - Retrieve the following key and keep it safe.
      - API Key (Consumer Key)
      - API Secret Key (Consumer Secret Key)
-     - Access Token (Make sure you have atleast [write permission](https://developer.twitter.com/en/docs/apps/app-permissions) in order to post tweet.)
+     - Access Token (Make sure you have at least [write permission](https://developer.twitter.com/en/docs/apps/app-permissions) in order to post a tweet.)
      - Access Token Secret
   - Make sure to use [Github Secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) to protect your keys.
   - The keys can be assigned via secret as an environmental variable from [my workflow](.github/workflows/tweet_scheduler.yml).
@@ -34,7 +35,7 @@ Create a schedule job to generate a random quote and tweet them via Twitter.
     access_token = os.getenv('ACCESS_TOKEN')
     access_token_secret = os.getenv('ACCESS_TOKEN_SECRET')
     ```
-  -  Random Quote is generate via [Quotable API](https://github.com/lukePeavey/quotable)
+  -  Random Quote is generated via [Quotable API](https://github.com/lukePeavey/quotable)
 
   ```python
     def get_random_quote():
