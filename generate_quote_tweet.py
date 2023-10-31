@@ -14,8 +14,13 @@ def get_random_quote():
     data = response.json()
     return f'"{data["content"]}" - {data["author"]}'
 
+quote = ""
+#Check the quote length matches the Twitter payload limit of 280 characters. 
+while len(quote) <= 45 or len(quote) > 280:
+    quote = get_random_quote() +"\n #quote #autotweet #quotebot #quoteOfTheDay"
+    
 #Insert tweet in payload.
-payload = {"text": get_random_quote()+"\n #quote #autotweet #quotebot #quoteOfTheDay"}
+payload = {"text": quote}
 print("Payload: %s" % payload)
 
 # Make the request
