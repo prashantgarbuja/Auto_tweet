@@ -3,7 +3,7 @@
 Tech Stack used:
 - Python
 - Twitter API
-- Quotable API
+- ZenQuotes API
 - Github Action
 
 ### Purpose: 
@@ -35,13 +35,13 @@ Visit my [Twitter](https://twitter.com/garbuja_p) for the result. (Note: all twe
     access_token = os.getenv('ACCESS_TOKEN')
     access_token_secret = os.getenv('ACCESS_TOKEN_SECRET')
     ```
-  -  Random Quote is generated via [Quotable API](https://github.com/lukePeavey/quotable)
+  -  Random Quote is generated via [ZenQuotes API](https://zenquotes.io/)
 
   ```python
     def get_random_quote():
-      response = requests.get('https://api.quotable.io/random')
+      response = requests.get('https://zenquotes.io/api/random')
       data = response.json()
-      return f'"{data["content"]}" - {data["author"]}'
+      return f'"{data[0]["q"]}" - {data[0]["a"]}'
   ```
   - Create a schedule job using [cron expression](https://github.com/Cron/Cron) in Github Action [Workflow](.github/workflows/tweet_scheduler.yml).
   - For further optimization, a {caching mechanism}(https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows) can be performed to speedup workflow. (Note: Caching is only useful when dependencies rarely change.)
