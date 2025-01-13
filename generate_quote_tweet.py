@@ -10,9 +10,9 @@ access_token_secret = os.getenv('ACCESS_TOKEN_SECRET')
 
 # Function to get a random quote
 def get_random_quote():
-    response = requests.get('https://api.quotable.io/random')
+    response = requests.get('https://zenquotes.io/api/random')
     data = response.json()
-    return f'"{data["content"]}" - {data["author"]}'
+    return f'"{data[0]["q"]}" - {data[0]["a"]}'
 
 quote = ""
 #Check the quote length matches the Twitter payload limit of 280 characters. 
